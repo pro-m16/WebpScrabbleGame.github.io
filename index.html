@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrabble</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+    <script src="./js/wordlist.js"></script>
+
+</head>
+
+<body>
+    <div class="preloader-wrapper">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;">
+            <span class="visually-hiden">WELCOME!!</span>
+    
+        </div>
+    </div>
+
+
+
+    <div class="game-menu">
+        <h1>SCRABBLE</h1>
+        <div class="menu">
+            <a href="#form1">
+                <button class="game-start">Click Here to Start</button>
+            </a>
+        </div>
+    </div>
+    <form id="form1">
+        <h1 class="header-text">Register</h1>
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" class="form-box" required minlength="3" />
+        <br /><br />
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" class="form-box" minlength="3" />
+        <br /><br />
+
+        <label for="dob" class="form-label">Date of Birth</label>
+        <input type="date" id="dob" name="dob" class="form-box" onchange="setAge(this)" required />
+        <br /><br />
+
+        <label for="age" class="form-label">Age:</label>
+        <input type="text" class="form-box" id="age" name="age" placeholder="Age" disabled>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" class="form-box1">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <br /><br />
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" class="form-box" />
+        <br /><br />
+
+        <button type="button" class="register-btn" id="regis-btn" onclick="handleRegister()">
+            Register
+        </button>
+        <br><br>
+
+        <button class="game-btn" id="start-btn" onclick="enableGame()">
+                Start
+        </button>
+
+    </form>
+    <div class="container">
+        <h2>Scramble</h2>
+        <div class="content" id="game-area" hidden>
+            <p class="word"></p>
+            <div class="details">
+                <p class="hint">Hint: <span></span></p>
+                <p class="time">Time Left: <span><b>30</b>s</span></p>
+            </div>
+            <input  id="inputField1" type="text" spellcheck="false" placeholder="Guess the correct word" disabled>
+            <div class="buttons">
+                <button class="check-word" id="check-word" disabled>Accept</button>
+                <br>
+                <button class="end-btn" id="end-btn">End</button> <br>
+                <button class="next-btn" id="next-btn" disabled>Next</button> 
+                <button  id="show-percentage" class="show-btn">Show Percentage</button>
+  
+            </div>
+        </div>
+        
+    
+        
+    </div>
+    <div class="container2">
+        <h2>Game Results</h2>
+        <div class="results">
+            <div class="text-field">
+                <h2>Player Details</h2>
+                <textarea name="percantage" id="showPercentage" class="textarea" cols="80" rows="60" readonly></textarea>
+                <h2>All Players</h2>
+                <textarea name="all players" id="showallplayers" class="textarea" cols="60" rows="60" readonly></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="container3">
+        <h2>Charts</h2>
+        <div class="final">
+            <div id="showcharts"></div>
+        </div>
+    </div>
+
+    <div class="circles">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script defer src="./js/script.js"></script>
+
+    
+</body>
+</html>
